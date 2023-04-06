@@ -1,0 +1,10 @@
+[vm]
+port = 10234:10234
+volume = /Users:/Users
+cpus = 2
+mem = 2048
+
+[podman]
+remote_port = 10234
+local_port = 10234
+use_docker = 1

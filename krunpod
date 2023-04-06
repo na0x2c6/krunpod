@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+
+CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config/krunpod}/krunpod.conf"
+
+case "$1" in
+  "init")
+      krunpod-init.sh
+      krunpod-config-apply.sh "$CONFIG_PATH"
+    ;;
+  "start")
+      krunpod-start.sh "$CONFIG_PATH"
+    ;;
+  "podman-env")
+      krunpod-config-podman-env.pl "$CONFIG_PATH"
+    ;;
+  "apply-conf")
+      krunpod-config-apply.sh "$CONFIG_PATH"
+    ;;
+  "delete")
+      krunpod-delete.sh
+    ;;
+  *)
+    echo "sorry, still no help";;
+esac
