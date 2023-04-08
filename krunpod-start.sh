@@ -9,4 +9,4 @@ if [[ ! -e $CONFIG_PATH ]] ; then
     exit 1
 fi
 
-krunvm start podman podman -- --log-level=debug system service --time=0 $(krunpod-config-start.pl "$CONFIG_PATH")
+krunvm start podman podman -- --log-level=info system service --time=0 $(krunpod-config-start.pl "$CONFIG_PATH")
